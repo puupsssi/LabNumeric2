@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include "NamesOfFunctions.h"
-#include "MyForm1.h"
 #include <string>
 #include <msclr\marshal_cppstd.h>
 
