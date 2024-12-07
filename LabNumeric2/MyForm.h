@@ -215,7 +215,7 @@ namespace LabNumeric2 {
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(117, 72);
 			this->button3->TabIndex = 8;
-			this->button3->Text = L"\\/";
+			this->button3->Text = L"=";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Visible = false;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
@@ -322,14 +322,28 @@ namespace LabNumeric2 {
 		if (is_test_task == 0) {
 			label1->Visible = true;
 			textBox1->Visible = true;
-			dataGridView1->Visible = false;
 			textBox1->Text = "";
+			textBox2->Text = "";
+			textBox2->Visible = false;
+			button2->Visible = false;
+			button3->Visible = false;
+			button4->Visible = false;
+			dataGridView1->Visible = false;
+			dataGridView2->Visible = false;
+			this->label1->Text = "Введите количество узлов:";
 		}
 		else {
 			label1->Visible = true;
 			textBox1->Visible = true;
-			dataGridView1->Visible = false;
+			textBox2->Visible = false;
 			textBox1->Text = "";
+			textBox2->Text = "";
+			button2->Visible = false;
+			button3->Visible = false;
+			button4->Visible = false;
+			dataGridView1->Visible = false;
+			dataGridView2->Visible = false;
+			this->label1->Text = "Введите количество узлов:";
 		}
 	}
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
@@ -422,6 +436,9 @@ private: System::Void textBox2_Leave(System::Object^ sender, System::EventArgs^ 
 	button3->Visible = true;
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	// Очищаем текущую таблицу
+	dataGridView1->Rows->Clear();
+	ns.clear();
 	int n = str.length();
 	if (n > 0) {
 		string* W = new string[n + 2];
@@ -448,6 +465,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		}	
 		previousEps = maxDifference;
 	}
+	button2->Visible = false;
 	button4->Visible = true;
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
