@@ -12,6 +12,7 @@ namespace LabNumeric2 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Windows::Forms::DataVisualization::Charting;
 
 	double left_boarder = 0, right_boarder = 1;
 	double h;
@@ -34,6 +35,7 @@ namespace LabNumeric2 {
 			//
 			//TODO: добавьте код конструктора
 			//
+		
 		}
 
 	protected:
@@ -58,7 +60,11 @@ namespace LabNumeric2 {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::DataGridView^ dataGridView2;
+	private: System::Windows::Forms::ComboBox^ comboBox2;
+	private: System::Windows::Forms::ComboBox^ comboBox3;
+	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart1;
 	protected:
+
 
 	private:
 		/// <summary>
@@ -73,10 +79,13 @@ namespace LabNumeric2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle7 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle8 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -88,8 +97,12 @@ namespace LabNumeric2 {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// comboBox1
@@ -132,25 +145,25 @@ namespace LabNumeric2 {
 			this->dataGridView1->AutoSizeRowsMode = System::Windows::Forms::DataGridViewAutoSizeRowsMode::AllCells;
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::Beige;
 			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Segoe Print", 13.875F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle5->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Segoe Print", 13.875F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle5->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle5->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle6->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle6->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle6->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle6->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle6->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle6->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle6;
 			this->dataGridView1->GridColor = System::Drawing::Color::Beige;
 			this->dataGridView1->Location = System::Drawing::Point(12, 182);
 			this->dataGridView1->Name = L"dataGridView1";
@@ -211,9 +224,9 @@ namespace LabNumeric2 {
 			// button3
 			// 
 			this->button3->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold));
-			this->button3->Location = System::Drawing::Point(1525, 23);
+			this->button3->Location = System::Drawing::Point(1526, 20);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(117, 72);
+			this->button3->Size = System::Drawing::Size(117, 76);
 			this->button3->TabIndex = 8;
 			this->button3->Text = L"=";
 			this->button3->UseVisualStyleBackColor = true;
@@ -238,23 +251,23 @@ namespace LabNumeric2 {
 			this->dataGridView2->AutoSizeRowsMode = System::Windows::Forms::DataGridViewAutoSizeRowsMode::AllCells;
 			this->dataGridView2->BackgroundColor = System::Drawing::Color::Beige;
 			this->dataGridView2->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle3->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold));
-			dataGridViewCellStyle3->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle3->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridView2->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle7->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle7->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle7->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold));
+			dataGridViewCellStyle7->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle7->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle7->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle7->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView2->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle4->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold));
-			dataGridViewCellStyle4->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle4->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle4->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView2->DefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle8->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle8->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle8->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold));
+			dataGridViewCellStyle8->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle8->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle8->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle8->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridView2->DefaultCellStyle = dataGridViewCellStyle8;
 			this->dataGridView2->GridColor = System::Drawing::Color::Beige;
 			this->dataGridView2->Location = System::Drawing::Point(12, 591);
 			this->dataGridView2->Name = L"dataGridView2";
@@ -265,6 +278,49 @@ namespace LabNumeric2 {
 			this->dataGridView2->TabIndex = 10;
 			this->dataGridView2->Visible = false;
 			// 
+			// comboBox2
+			// 
+			this->comboBox2->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold));
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Аналит. и числ. решения", L"Разность аналит. и числ. решения" });
+			this->comboBox2->Location = System::Drawing::Point(1692, 24);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(456, 65);
+			this->comboBox2->TabIndex = 11;
+			this->comboBox2->Text = L" Выберите вид графика:";
+			this->comboBox2->Visible = false;
+			this->comboBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::comboBox2_SelectedIndexChanged);
+			// 
+			// chart1
+			// 
+			chartArea2->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea2);
+			legend2->Name = L"Legend1";
+			this->chart1->Legends->Add(legend2);
+			this->chart1->Location = System::Drawing::Point(63, 193);
+			this->chart1->Name = L"chart1";
+			series2->ChartArea = L"ChartArea1";
+			series2->Legend = L"Legend1";
+			series2->Name = L"Series1";
+			this->chart1->Series->Add(series2);
+			this->chart1->Size = System::Drawing::Size(1033, 886);
+			this->chart1->TabIndex = 12;
+			this->chart1->Text = L"chart1";
+			this->chart1->Visible = false;
+			// 
+			// comboBox3
+			// 
+			this->comboBox3->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold));
+			this->comboBox3->FormattingEnabled = true;
+			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Числ.  решение", L"Числ. рещение с h/2" });
+			this->comboBox3->Location = System::Drawing::Point(1692, 24);
+			this->comboBox3->Name = L"comboBox3";
+			this->comboBox3->Size = System::Drawing::Size(454, 65);
+			this->comboBox3->TabIndex = 13;
+			this->comboBox3->Text = L"Выберите вид графика:";
+			this->comboBox3->Visible = false;
+			this->comboBox3->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::comboBox3_SelectedIndexChanged);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
@@ -272,6 +328,9 @@ namespace LabNumeric2 {
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::Beige;
 			this->ClientSize = System::Drawing::Size(2138, 1710);
+			this->Controls->Add(this->comboBox3);
+			this->Controls->Add(this->chart1);
+			this->Controls->Add(this->comboBox2);
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
@@ -287,6 +346,7 @@ namespace LabNumeric2 {
 			this->Text = L"MyForm";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -324,6 +384,9 @@ namespace LabNumeric2 {
 			textBox1->Visible = true;
 			textBox1->Text = "";
 			textBox2->Text = "";
+			comboBox2->Visible = false;
+			comboBox3->Visible = false;
+			chart1->Visible = false;
 			textBox2->Visible = false;
 			button2->Visible = false;
 			button3->Visible = false;
@@ -338,6 +401,9 @@ namespace LabNumeric2 {
 			textBox2->Visible = false;
 			textBox1->Text = "";
 			textBox2->Text = "";
+			comboBox2->Visible = false;
+			comboBox3->Visible = false;
+			chart1->Visible = false;
 			button2->Visible = false;
 			button3->Visible = false;
 			button4->Visible = false;
@@ -350,7 +416,24 @@ namespace LabNumeric2 {
 	}
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	try {
-		int rows = Int32::Parse(textBox1->Text);
+		int n = Int32::Parse(textBox1->Text);
+		int step = 1;
+		if (n > 9999) {
+			step = 100;
+		}
+		else if (n > 1999) {
+			step = 50;
+		}
+		else if (n > 999) {
+			step = 10;
+		}
+		else if (n > 499) {
+			step = 5;
+		}
+		else if (n > 299) {
+			step = 3;
+		}
+		int rows = n/step;
 		int columns = 5;
 		dataGridView1->Visible = true;
 		button1->Visible = true;
@@ -379,6 +462,10 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 		if (String::IsNullOrWhiteSpace(textBox1->Text)) {
 			dataGridView1->Visible = false;
 			button1->Visible = false;
+			chart1->Visible = false;
+			// Очистка и настройка графика
+			chart1->Series->Clear();
+			chart1->ChartAreas->Clear();
 			this->label2->Text = " ";
 			return;
 		}
@@ -386,26 +473,186 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	button2->Visible = true;
+	ns.clear();
 	n = Int32::Parse(textBox1->Text);
 	h = 1. / n;
 	result = differenceScheme(n, mu1, mu2, breaking_point, (1-is_test_task), &maxDifference, &maxDiffX);
-	for (int i = 0; i < n + 1; i++) {
-		dataGridView1->Rows[i]->Cells[0]->Value = i;
+	// Определяем шаг вывода в таблицу
+	int step = 1;
+	if (n > 9999) {
+		step = 100;
+	}
+	else if (n > 99999) {
+		step = 1000;
+	}
+	else if (n > 999) {
+		step = 10;
+	}
+	else if (n > 499) {
+		step = 5;
+	}
+	else if (n > 299) {
+		step = 3;
+	}
+	int j = 0;
+	for (int i = 0; i <= n/step; i++) {
+		dataGridView1->Rows[i]->Cells[0]->Value = j;
 		dataGridView1->Rows[i]->Cells[1]->Value = result[i][0];
 		dataGridView1->Rows[i]->Cells[2]->Value = result[i][1];
 		dataGridView1->Rows[i]->Cells[3]->Value = result[i][2];
 		dataGridView1->Rows[i]->Cells[4]->Value = result[i][3];
+		ns.push_back(j);
+		j+= step;
 	}
 	if (is_test_task == 0)
 	{
 		this->label2->Text = L"для решения задачи использована равномерная сетка с числом разбиений n = «"+ n +"»;\nзадача должна быть решена с погрешностью не более epsilon = 0.5*10 –6;\nзадача решена с погрешностью epsilon1 = «" + maxDifference +"»;\nмаксимальное отклонение аналитического и численного решений наблюдается в точке x = «"+ maxDiffX +"»";
+		comboBox2->Visible = true;
 	}
 	else
 	{
 		this->label2->Text = L"для решения задачи использована равномерная сетка с числом разбиений n = «" + n + "»;\nзадача должна быть решена с заданной точностью epsilon = 0.5*10 –6;\nзадача решена с точностью epsilon2 = «" + maxDifference + "»;\nмаксимальная разность численных решений в общих узлах сетки наблюдается в точке x = «" + maxDiffX + "»";
+		comboBox3->Visible = true;
 	}
 	}
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void comboBox2_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	int is_number_gr = comboBox2->SelectedIndex;
+	if (is_number_gr == 0)
+	{
+		n = Int32::Parse(textBox1->Text);
+		result = differenceScheme(n, mu1, mu2, breaking_point, (1 - is_test_task), &maxDifference, &maxDiffX); 
+
+		// Очистка и настройка графика
+		chart1->Series->Clear();
+		chart1->ChartAreas->Clear();
+		chart1->ChartAreas->Add("Default");
+		chart1->ChartAreas["Default"]->AxisX->Title = "x";
+		chart1->ChartAreas["Default"]->AxisY->Title = "u(x), v(x)";
+
+		// Создание серий
+		chart1->Series->Add("Аналитическое решение u(x)");
+		chart1->Series["Аналитическое решение u(x)"]->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+		chart1->Series["Аналитическое решение u(x)"]->BorderWidth = 4;
+		chart1->Series["Аналитическое решение u(x)"]->Color = System::Drawing::Color::Blue;
+
+		chart1->Series->Add("Численное решение v(x)");
+		chart1->Series["Численное решение v(x)"]->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+		chart1->Series["Численное решение v(x)"]->BorderWidth = 2;
+		chart1->Series["Численное решение v(x)"]->Color = System::Drawing::Color::Red;
+		for (int i = 0; i < ns.size(); i++) {
+			double x = result[i][0];
+			double u_x = result[i][2]; // Истинное решение
+			double v_x = result[i][1]; // Численное решение
+
+			chart1->Series["Аналитическое решение u(x)"]->Points->AddXY(x, u_x); // Добавляем точки в аналитическое решение
+			chart1->Series["Численное решение v(x)"]->Points->AddXY(x, v_x);    // Добавляем точки в численное решение
+		}
+
+		// Настройка видимости элементов
+		chart1->Visible = true;
+		dataGridView1->Visible = false;
+		label2->Visible = false;
+	}
+	else
+	{
+		n = Int32::Parse(textBox1->Text);
+		result = differenceScheme(n, mu1, mu2, breaking_point, (1 - is_test_task), &maxDifference, &maxDiffX);
+
+		// Очистка и настройка графика
+		chart1->Series->Clear();
+		chart1->ChartAreas->Clear();
+		chart1->ChartAreas->Add("Default");
+		chart1->ChartAreas["Default"]->AxisX->Title = "x";
+		chart1->ChartAreas["Default"]->AxisY->Title = "u(x)-v(x)";
+
+		// Создание серий
+		chart1->Series->Add("u(x)-v(x)");
+		chart1->Series["u(x)-v(x)"]->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+		chart1->Series["u(x)-v(x)"]->BorderWidth = 2;
+		chart1->Series["u(x)-v(x)"]->Color = System::Drawing::Color::Blue;
+		for (int i = 0; i < ns.size(); i++) {
+			double x = result[i][0];
+			double u_x = result[i][2]; // Истинное решение
+			double v_x = result[i][1];// Численное решение
+			double vu = u_x - v_x;
+			chart1->Series["u(x)-v(x)"]->Points->AddXY(x, vu); // Добавляем точки в решение
+		}
+
+		// Настройка видимости элементов
+		chart1->Visible = true;
+		dataGridView1->Visible = false;
+		label2->Visible = false;
+	}
+}
+private: System::Void comboBox3_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	int is_number_gr = comboBox3->SelectedIndex;
+	if (is_number_gr == 0)
+	{
+		n = Int32::Parse(textBox1->Text);
+		result = differenceScheme(n, mu1, mu2, breaking_point, (1 - is_test_task), &maxDifference, &maxDiffX);
+
+		// Очистка и настройка графика
+		chart1->Series->Clear();
+		chart1->ChartAreas->Clear();
+		chart1->ChartAreas->Add("Default");
+		chart1->ChartAreas["Default"]->AxisX->Title = "x";
+		chart1->ChartAreas["Default"]->AxisY->Title = "v(x), v2(x)";
+
+		chart1->Series->Add("Численное решение v(x)");
+		chart1->Series["Численное решение v(x)"]->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+		chart1->Series["Численное решение v(x)"]->BorderWidth = 4;
+		chart1->Series["Численное решение v(x)"]->Color = System::Drawing::Color::Blue;
+
+		chart1->Series->Add("Численное решение v2(x)");
+		chart1->Series["Численное решение v2(x)"]->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+		chart1->Series["Численное решение v2(x)"]->BorderWidth = 2;
+		chart1->Series["Численное решение v2(x)"]->Color = System::Drawing::Color::Red;
+		for (int i = 0; i < ns.size(); i++) {
+			double x = result[i][0];
+			double v2_x = result[i][2]; // Численное решение с половинным шагом
+			double v_x = result[i][1]; // Численное решение
+
+			chart1->Series["Численное решение v(x)"]->Points->AddXY(x, v_x); // Добавляем точки в численное решение с половинным шагом
+			chart1->Series["Численное решение v2(x)"]->Points->AddXY(x, v2_x);    // Добавляем точки в численное решение
+		}
+
+		// Настройка видимости элементов
+		chart1->Visible = true;
+		dataGridView1->Visible = false;
+		label2->Visible = false;
+	}
+	else
+	{
+		n = Int32::Parse(textBox1->Text);
+		result = differenceScheme(n, mu1, mu2, breaking_point, (1 - is_test_task), &maxDifference, &maxDiffX);
+
+		// Очистка и настройка графика
+		chart1->Series->Clear();
+		chart1->ChartAreas->Clear();
+		chart1->ChartAreas->Add("Default");
+		chart1->ChartAreas["Default"]->AxisX->Title = "x";
+		chart1->ChartAreas["Default"]->AxisY->Title = "v(x)-v2(x)";
+
+		// Создание серий
+		chart1->Series->Add("v(x)-v2(x)");
+		chart1->Series["v(x)-v2(x)"]->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+		chart1->Series["v(x)-v2(x)"]->BorderWidth = 2;
+		chart1->Series["v(x)-v2(x)"]->Color = System::Drawing::Color::Blue;
+		for (int i = 0; i < ns.size(); i++) {
+			double x = result[i][0];
+			double v2_x = result[i][2]; // Численное решение с половинным шагом
+			double v_x = result[i][1]; // Численное решение
+			double vv = v_x - v2_x;
+			chart1->Series["v(x)-v2(x)"]->Points->AddXY(x, vv); // Добавляем точки в решение
+		}
+
+		// Настройка видимости элементов
+		chart1->Visible = true;
+		dataGridView1->Visible = false;
+		label2->Visible = false;
+	}
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	label2->Visible = false;
@@ -426,6 +673,9 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	dataGridView1->Visible = true;
 	this->label1->Text = "Введите 5 разных значений n:";
 	textBox1->Visible = false;
+	comboBox2->Visible = false;
+	comboBox3->Visible = false;
+	chart1->Visible = false;
 	button1->Visible = false;
 	textBox2->Visible = true;
 
