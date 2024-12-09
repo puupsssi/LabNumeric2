@@ -111,9 +111,10 @@ namespace LabNumeric2 {
 				static_cast<System::Byte>(204)));
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Тестовая задача", L"Основная задача" });
-			this->comboBox1->Location = System::Drawing::Point(12, 12);
+			this->comboBox1->Location = System::Drawing::Point(9, 10);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(2);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(353, 65);
+			this->comboBox1->Size = System::Drawing::Size(266, 51);
 			this->comboBox1->TabIndex = 0;
 			this->comboBox1->Text = L" Выберите задачу:";
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::comboBox1_SelectedIndexChanged);
@@ -122,9 +123,10 @@ namespace LabNumeric2 {
 			// 
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold));
-			this->label1->Location = System::Drawing::Point(443, 20);
+			this->label1->Location = System::Drawing::Point(332, 16);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(480, 57);
+			this->label1->Size = System::Drawing::Size(361, 43);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Введите количество узлов:";
 			this->label1->Visible = false;
@@ -132,9 +134,10 @@ namespace LabNumeric2 {
 			// textBox1
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold));
-			this->textBox1->Location = System::Drawing::Point(978, 20);
+			this->textBox1->Location = System::Drawing::Point(763, 16);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(213, 64);
+			this->textBox1->Size = System::Drawing::Size(161, 50);
 			this->textBox1->TabIndex = 2;
 			this->textBox1->Visible = false;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
@@ -165,12 +168,13 @@ namespace LabNumeric2 {
 			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
 			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle2;
 			this->dataGridView1->GridColor = System::Drawing::Color::Beige;
-			this->dataGridView1->Location = System::Drawing::Point(12, 182);
+			this->dataGridView1->Location = System::Drawing::Point(9, 146);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->RowHeadersWidth = 82;
 			this->dataGridView1->RowTemplate->Height = 33;
-			this->dataGridView1->Size = System::Drawing::Size(1901, 845);
+			this->dataGridView1->Size = System::Drawing::Size(1426, 676);
 			this->dataGridView1->TabIndex = 3;
 			this->dataGridView1->Visible = false;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
@@ -178,9 +182,10 @@ namespace LabNumeric2 {
 			// button1
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold));
-			this->button1->Location = System::Drawing::Point(1209, 20);
+			this->button1->Location = System::Drawing::Point(928, 13);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(434, 76);
+			this->button1->Size = System::Drawing::Size(326, 61);
 			this->button1->TabIndex = 4;
 			this->button1->Text = L"Заполнить таблицу";
 			this->button1->UseVisualStyleBackColor = true;
@@ -191,9 +196,10 @@ namespace LabNumeric2 {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold));
-			this->label2->Location = System::Drawing::Point(12, 1045);
+			this->label2->Location = System::Drawing::Point(9, 836);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(64, 57);
+			this->label2->Size = System::Drawing::Size(49, 43);
 			this->label2->TabIndex = 5;
 			this->label2->Text = L"   ";
 			this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
@@ -201,9 +207,10 @@ namespace LabNumeric2 {
 			// button2
 			// 
 			this->button2->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold));
-			this->button2->Location = System::Drawing::Point(1093, 100);
+			this->button2->Location = System::Drawing::Point(820, 80);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(550, 76);
+			this->button2->Size = System::Drawing::Size(412, 61);
 			this->button2->TabIndex = 6;
 			this->button2->Text = L"Проверка порядка сходимости";
 			this->button2->UseVisualStyleBackColor = true;
@@ -213,9 +220,10 @@ namespace LabNumeric2 {
 			// textBox2
 			// 
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold));
-			this->textBox2->Location = System::Drawing::Point(978, 20);
+			this->textBox2->Location = System::Drawing::Point(754, 16);
+			this->textBox2->Margin = System::Windows::Forms::Padding(2);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(528, 64);
+			this->textBox2->Size = System::Drawing::Size(397, 50);
 			this->textBox2->TabIndex = 7;
 			this->textBox2->Visible = false;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_Leave);
@@ -224,9 +232,10 @@ namespace LabNumeric2 {
 			// button3
 			// 
 			this->button3->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold));
-			this->button3->Location = System::Drawing::Point(1526, 20);
+			this->button3->Location = System::Drawing::Point(1166, 13);
+			this->button3->Margin = System::Windows::Forms::Padding(2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(117, 76);
+			this->button3->Size = System::Drawing::Size(88, 61);
 			this->button3->TabIndex = 8;
 			this->button3->Text = L"=";
 			this->button3->UseVisualStyleBackColor = true;
@@ -236,9 +245,10 @@ namespace LabNumeric2 {
 			// button4
 			// 
 			this->button4->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold));
-			this->button4->Location = System::Drawing::Point(1177, 498);
+			this->button4->Location = System::Drawing::Point(883, 398);
+			this->button4->Margin = System::Windows::Forms::Padding(2);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(465, 76);
+			this->button4->Size = System::Drawing::Size(349, 61);
 			this->button4->TabIndex = 9;
 			this->button4->Text = L"Вывести общую таблицу";
 			this->button4->UseVisualStyleBackColor = true;
@@ -269,12 +279,13 @@ namespace LabNumeric2 {
 			dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
 			this->dataGridView2->DefaultCellStyle = dataGridViewCellStyle4;
 			this->dataGridView2->GridColor = System::Drawing::Color::Beige;
-			this->dataGridView2->Location = System::Drawing::Point(12, 591);
+			this->dataGridView2->Location = System::Drawing::Point(9, 473);
+			this->dataGridView2->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersVisible = false;
 			this->dataGridView2->RowHeadersWidth = 82;
 			this->dataGridView2->RowTemplate->Height = 33;
-			this->dataGridView2->Size = System::Drawing::Size(2500, 845);
+			this->dataGridView2->Size = System::Drawing::Size(1875, 676);
 			this->dataGridView2->TabIndex = 10;
 			this->dataGridView2->Visible = false;
 			// 
@@ -283,9 +294,10 @@ namespace LabNumeric2 {
 			this->comboBox2->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold));
 			this->comboBox2->FormattingEnabled = true;
 			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Аналит. и числ. решения", L"Разность аналит. и числ. решения" });
-			this->comboBox2->Location = System::Drawing::Point(1692, 24);
+			this->comboBox2->Location = System::Drawing::Point(1269, 19);
+			this->comboBox2->Margin = System::Windows::Forms::Padding(2);
 			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(456, 65);
+			this->comboBox2->Size = System::Drawing::Size(343, 51);
 			this->comboBox2->TabIndex = 11;
 			this->comboBox2->Text = L" Выберите вид графика:";
 			this->comboBox2->Visible = false;
@@ -297,13 +309,14 @@ namespace LabNumeric2 {
 			this->chart1->ChartAreas->Add(chartArea1);
 			legend1->Name = L"Legend1";
 			this->chart1->Legends->Add(legend1);
-			this->chart1->Location = System::Drawing::Point(2015, 182);
+			this->chart1->Location = System::Drawing::Point(1511, 146);
+			this->chart1->Margin = System::Windows::Forms::Padding(2);
 			this->chart1->Name = L"chart1";
 			series1->ChartArea = L"ChartArea1";
 			series1->Legend = L"Legend1";
 			series1->Name = L"Series1";
 			this->chart1->Series->Add(series1);
-			this->chart1->Size = System::Drawing::Size(1033, 886);
+			this->chart1->Size = System::Drawing::Size(775, 709);
 			this->chart1->TabIndex = 12;
 			this->chart1->Text = L"chart1";
 			this->chart1->Visible = false;
@@ -312,10 +325,11 @@ namespace LabNumeric2 {
 			// 
 			this->comboBox3->Font = (gcnew System::Drawing::Font(L"Segoe Print", 12, System::Drawing::FontStyle::Bold));
 			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Числ.  решение", L"Числ. рещение с h/2" });
-			this->comboBox3->Location = System::Drawing::Point(1692, 24);
+			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Числ.  решение", L"Разница двух численных решений" });
+			this->comboBox3->Location = System::Drawing::Point(1269, 19);
+			this->comboBox3->Margin = System::Windows::Forms::Padding(2);
 			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(454, 65);
+			this->comboBox3->Size = System::Drawing::Size(342, 51);
 			this->comboBox3->TabIndex = 13;
 			this->comboBox3->Text = L"Выберите вид графика:";
 			this->comboBox3->Visible = false;
@@ -323,11 +337,11 @@ namespace LabNumeric2 {
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::Beige;
-			this->ClientSize = System::Drawing::Size(3124, 1710);
+			this->ClientSize = System::Drawing::Size(1443, 840);
 			this->Controls->Add(this->comboBox3);
 			this->Controls->Add(this->chart1);
 			this->Controls->Add(this->comboBox2);
@@ -342,6 +356,7 @@ namespace LabNumeric2 {
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->comboBox1);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
@@ -393,7 +408,7 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 		button4->Visible = false;
 		dataGridView1->Visible = false;
 		dataGridView2->Visible = false;
-		this->label1->Text = "Введите количество узлов:";
+		this->label1->Text = "Введите количество разбиений:";
 	}
 	else {
 		label1->Visible = true;
@@ -409,7 +424,7 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 		button4->Visible = false;
 		dataGridView1->Visible = false;
 		dataGridView2->Visible = false;
-		this->label1->Text = "Введите количество узлов:";
+		this->label1->Text = "Введите количество разбиений:";
 	}
 }
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
@@ -493,15 +508,15 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	else if (n > 299) {
 		step = 3;
 	}
-	result = differenceScheme(n/step, mu1, mu2, breaking_point, (1 - is_test_task), &maxDifference, &maxDiffX);
-	int j = 0;
+	result = differenceScheme(n, mu1, mu2, breaking_point, (1 - is_test_task), &maxDifference, &maxDiffX);
+	int j= 0;
 	for (int i = 0; i <= n/step; i++) {
 		dataGridView1->Rows[i]->Cells[0]->Value = j;
-		dataGridView1->Rows[i]->Cells[1]->Value = result[i][0];
-		dataGridView1->Rows[i]->Cells[2]->Value = result[i][1];
-		dataGridView1->Rows[i]->Cells[3]->Value = result[i][2];
-		dataGridView1->Rows[i]->Cells[4]->Value = result[i][3];
-		ns.push_back(j);
+		dataGridView1->Rows[i]->Cells[1]->Value = result[j][0];
+		dataGridView1->Rows[i]->Cells[2]->Value = result[j][1];
+		dataGridView1->Rows[i]->Cells[3]->Value = result[j][2];
+		dataGridView1->Rows[i]->Cells[4]->Value = result[j][3];
+		//ns.push_back(j);
 		j+= step;
 	}
 	if (is_test_task == 0)
@@ -536,7 +551,7 @@ private: System::Void comboBox2_SelectedIndexChanged(System::Object^ sender, Sys
 		chart1->Series["Численное решение v(x)"]->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
 		chart1->Series["Численное решение v(x)"]->BorderWidth = 2;
 		chart1->Series["Численное решение v(x)"]->Color = System::Drawing::Color::Red;
-		for (int i = 0; i < ns.size(); i++) {
+		for (int i = 0; i < result.size(); i++) {
 			double x = result[i][0];
 			double u_x = result[i][2]; // Истинное решение
 			double v_x = result[i][1]; // Численное решение
@@ -558,7 +573,7 @@ private: System::Void comboBox2_SelectedIndexChanged(System::Object^ sender, Sys
 		chart1->Series["u(x)-v(x)"]->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
 		chart1->Series["u(x)-v(x)"]->BorderWidth = 2;
 		chart1->Series["u(x)-v(x)"]->Color = System::Drawing::Color::Blue;
-		for (int i = 0; i < ns.size(); i++) {
+		for (int i = 0; i < result.size(); i++) {
 			double x = result[i][0];
 			double u_x = result[i][2]; // Истинное решение
 			double v_x = result[i][1];// Численное решение
@@ -587,7 +602,7 @@ private: System::Void comboBox3_SelectedIndexChanged(System::Object^ sender, Sys
 		chart1->Series["Численное решение v2(x)"]->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
 		chart1->Series["Численное решение v2(x)"]->BorderWidth = 2;
 		chart1->Series["Численное решение v2(x)"]->Color = System::Drawing::Color::Red;
-		for (int i = 0; i < ns.size(); i++) {
+		for (int i = 0; i < result.size(); i++) {
 			double x = result[i][0];
 			double v2_x = result[i][2]; // Численное решение с половинным шагом
 			double v_x = result[i][1]; // Численное решение
@@ -610,7 +625,7 @@ private: System::Void comboBox3_SelectedIndexChanged(System::Object^ sender, Sys
 		chart1->Series["v(x)-v2(x)"]->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
 		chart1->Series["v(x)-v2(x)"]->BorderWidth = 2;
 		chart1->Series["v(x)-v2(x)"]->Color = System::Drawing::Color::Blue;
-		for (int i = 0; i < ns.size(); i++) {
+		for (int i = 0; i < result.size(); i++) {
 			double x = result[i][0];
 			double v2_x = result[i][2];
 			double v_x = result[i][1];
