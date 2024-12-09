@@ -10,25 +10,25 @@ double u_for_test(double x) {
 }
 
 double d_i(double h, double breaking_point, double x_i_minus_05, double x_i_plus_05, double x_i, int is_test_task) {
-	if (is_test_task) { // тестовая задача
-		if (x_i_plus_05 <= breaking_point) { // отрезок левее точки разрыва
+	if (is_test_task) { // ГІГҐГ±ГІГ®ГўГ Гї Г§Г Г¤Г Г·Г 
+		if (x_i_plus_05 <= breaking_point) { // Г®ГІГ°ГҐГ§Г®ГЄ Г«ГҐГўГҐГҐ ГІГ®Г·ГЄГЁ Г°Г Г§Г°Г»ГўГ 
 			return 1.;
 		}
-		if (x_i_minus_05 >= breaking_point) { // отрезок правее точки разрыва 
+		if (x_i_minus_05 >= breaking_point) { // Г®ГІГ°ГҐГ§Г®ГЄ ГЇГ°Г ГўГҐГҐ ГІГ®Г·ГЄГЁ Г°Г Г§Г°Г»ГўГ  
 			return 0.0625;
 		}
-		if (x_i_minus_05 <= breaking_point && x_i_plus_05 >= breaking_point) { // точка разрыва принадлежит отрезку
+		if (x_i_minus_05 <= breaking_point && x_i_plus_05 >= breaking_point) { // ГІГ®Г·ГЄГ  Г°Г Г§Г°Г»ГўГ  ГЇГ°ГЁГ­Г Г¤Г«ГҐГ¦ГЁГІ Г®ГІГ°ГҐГ§ГЄГі
 			return (1 / h) * (breaking_point - x_i_minus_05) + (0.0625 / h) * (x_i_plus_05 - breaking_point);
 		}
 	}
-	else { // основная задача
-		if (x_i_plus_05 <= breaking_point) {// отрезок левее точки разрыва
+	else { // Г®Г±Г­Г®ГўГ­Г Гї Г§Г Г¤Г Г·Г 
+		if (x_i_plus_05 <= breaking_point) {// Г®ГІГ°ГҐГ§Г®ГЄ Г«ГҐГўГҐГҐ ГІГ®Г·ГЄГЁ Г°Г Г§Г°Г»ГўГ 
 			return 1.;
 		}
-		if (x_i_minus_05 >= breaking_point) { // отрезок правее точки разрыва 
+		if (x_i_minus_05 >= breaking_point) { // Г®ГІГ°ГҐГ§Г®ГЄ ГЇГ°Г ГўГҐГҐ ГІГ®Г·ГЄГЁ Г°Г Г§Г°Г»ГўГ  
 			return (1 / 6.) * (pow(x_i_minus_05, 2) + 4 * pow(x_i, 2) + pow(x_i_plus_05, 2));
 		}
-		if (x_i_minus_05 <= breaking_point && x_i_plus_05 >= breaking_point) { // точка разрыва принадлежит отрезку
+		if (x_i_minus_05 <= breaking_point && x_i_plus_05 >= breaking_point) { // ГІГ®Г·ГЄГ  Г°Г Г§Г°Г»ГўГ  ГЇГ°ГЁГ­Г Г¤Г«ГҐГ¦ГЁГІ Г®ГІГ°ГҐГ§ГЄГі
 			return (1 / h) * ((breaking_point - x_i_minus_05) +
 				((x_i_plus_05 - breaking_point) / 6.) *
 				(4 * pow(((breaking_point + x_i_plus_05) / 2), 2) +
@@ -38,31 +38,33 @@ double d_i(double h, double breaking_point, double x_i_minus_05, double x_i_plus
 }
 
 double a_i(double h, double breaking_point, double x_i_minus_05, double x_i_minus_1, double x_i, int is_test_task) {
-	if (is_test_task) { // тестовая задача
-		if (x_i <= breaking_point) { // отрезок левее точки разрыва
+	if (is_test_task) { // ГІГҐГ±ГІГ®ГўГ Гї Г§Г Г¤Г Г·Г 
+		if (x_i <= breaking_point) { // Г®ГІГ°ГҐГ§Г®ГЄ Г«ГҐГўГҐГҐ ГІГ®Г·ГЄГЁ Г°Г Г§Г°Г»ГўГ 
 			return 0.5;
 		}
-		if (x_i_minus_1 >= breaking_point) { // отрезок правее точки разрыва 
+		if (x_i_minus_1 >= breaking_point) { // Г®ГІГ°ГҐГ§Г®ГЄ ГЇГ°Г ГўГҐГҐ ГІГ®Г·ГЄГЁ Г°Г Г§Г°Г»ГўГ  
 			return 1.25;
 		}
-		if (x_i_minus_1 <= breaking_point && breaking_point <= x_i) { // точка разрыва принадлежит отрезку
+		if (x_i_minus_1 <= breaking_point && breaking_point <= x_i) { // ГІГ®Г·ГЄГ  Г°Г Г§Г°Г»ГўГ  ГЇГ°ГЁГ­Г Г¤Г«ГҐГ¦ГЁГІ Г®ГІГ°ГҐГ§ГЄГі
 			return pow((2. / h) * (breaking_point - x_i_minus_1) + (4 / (5 * h)) * (x_i - breaking_point), -1);
 		}
 	}
-	else { // основная задача
-		if (x_i <= breaking_point) { // отрезок левее точки разрыва
+	else { // Г®Г±Г­Г®ГўГ­Г Гї Г§Г Г¤Г Г·Г 
+		if (x_i <= breaking_point) { // Г®ГІГ°ГҐГ§Г®ГЄ Г«ГҐГўГҐГҐ ГІГ®Г·ГЄГЁ Г°Г Г§Г°Г»ГўГ 
 			double to_turn = 0;
 			if (x_i_minus_1 != 0) {
 				to_turn = pow((1. / 6.) * (1. / sqrt(x_i_minus_1) + 4. / sqrt(x_i_minus_05) + 1. / sqrt(x_i)), -1);
 			}
+			//return 2 * (sqrt(x_i) - sqrt(x_i_minus_1));
 			return to_turn;
 		}
-		if (x_i_minus_1 >= breaking_point) { // отрезок правее точки разрыва 
+		if (x_i_minus_1 >= breaking_point) { // Г®ГІГ°ГҐГ§Г®ГЄ ГЇГ°Г ГўГҐГҐ ГІГ®Г·ГЄГЁ Г°Г Г§Г°Г»ГўГ  
 			double turn = (1. / 6.) * (1. / (x_i_minus_1 + 1) + 4. / (x_i_minus_05 + 1.) + 1. / x_i);
 			return pow(turn, -1);
 		}
-		if (x_i_minus_1 <= breaking_point && breaking_point <= x_i) { // точка разрыва принадлежит отрезку
-			double first = ((breaking_point - x_i_minus_1) / 6.) * (1. / sqrt(x_i_minus_1) + 4. / sqrt((x_i_minus_05 + breaking_point) / 2.) + 1. / sqrt(breaking_point)); // просто по-отдельности считаю слагаемые
+		if (x_i_minus_1 <= breaking_point && breaking_point <= x_i) { // ГІГ®Г·ГЄГ  Г°Г Г§Г°Г»ГўГ  ГЇГ°ГЁГ­Г Г¤Г«ГҐГ¦ГЁГІ Г®ГІГ°ГҐГ§ГЄГі
+			double first = ((breaking_point - x_i_minus_1) / 6.) * (1. / sqrt(x_i_minus_1) + 4. / sqrt((x_i_minus_05 + breaking_point) / 2.) + 1. / sqrt(breaking_point)); // ГЇГ°Г®Г±ГІГ® ГЇГ®-Г®ГІГ¤ГҐГ«ГјГ­Г®Г±ГІГЁ Г±Г·ГЁГІГ Гѕ Г±Г«Г ГЈГ ГҐГ¬Г»ГҐ
+			//double first = (2 * sqrt(breaking_point) - 2 * sqrt(x_i_minus_1)) * (breaking_point - x_i_minus_1);
 			double second = ((x_i - breaking_point) / 6.) * (1 / (x_i + 1.) + 4 / ((x_i + breaking_point) / 2. + 1.) + 1 / breaking_point);
 			return pow(((1 / h) * (first + second)), -1);
 		}
@@ -70,26 +72,26 @@ double a_i(double h, double breaking_point, double x_i_minus_05, double x_i_minu
 }
 
 double fi_i(double h, double breaking_point, double x_i_minus_05, double x_i_plus_05, double x_i, int is_test_task) {
-	if (is_test_task) { // тестовая задача
-		if (x_i_plus_05 <= breaking_point) { // отрезок левее точки разрыва
+	if (is_test_task) { // ГІГҐГ±ГІГ®ГўГ Гї Г§Г Г¤Г Г·Г 
+		if (x_i_plus_05 <= breaking_point) { // Г®ГІГ°ГҐГ§Г®ГЄ Г«ГҐГўГҐГҐ ГІГ®Г·ГЄГЁ Г°Г Г§Г°Г»ГўГ 
 			return 1.;
 		}
-		if (x_i_minus_05 >= breaking_point) { // отрезок правее точки разрыва 
+		if (x_i_minus_05 >= breaking_point) { // Г®ГІГ°ГҐГ§Г®ГЄ ГЇГ°Г ГўГҐГҐ ГІГ®Г·ГЄГЁ Г°Г Г§Г°Г»ГўГ  
 			return 2.5;
 		}
-		if (x_i_minus_05 <= breaking_point && breaking_point <= x_i_plus_05) { // точка разрыва принадлежит отрезку
+		if (x_i_minus_05 <= breaking_point && breaking_point <= x_i_plus_05) { // ГІГ®Г·ГЄГ  Г°Г Г§Г°Г»ГўГ  ГЇГ°ГЁГ­Г Г¤Г«ГҐГ¦ГЁГІ Г®ГІГ°ГҐГ§ГЄГі
 			return (1 / h) * (breaking_point - x_i_minus_05) + (2.5 / h) * (x_i_plus_05 - breaking_point);
 		}
 	}
-	else { // основная задача
-		if (x_i_plus_05 <= breaking_point) { // отрезок левее точки разрыва
+	else { // Г®Г±Г­Г®ГўГ­Г Гї Г§Г Г¤Г Г·Г 
+		if (x_i_plus_05 <= breaking_point) { // Г®ГІГ°ГҐГ§Г®ГЄ Г«ГҐГўГҐГҐ ГІГ®Г·ГЄГЁ Г°Г Г§Г°Г»ГўГ 
 			return 1.;
 		}
-		if (x_i_minus_05 >= breaking_point) { // отрезок правее точки разрыва 
+		if (x_i_minus_05 >= breaking_point) { // Г®ГІГ°ГҐГ§Г®ГЄ ГЇГ°Г ГўГҐГҐ ГІГ®Г·ГЄГЁ Г°Г Г§Г°Г»ГўГ  
 			return (1. / 6.) * (sqrt(x_i_minus_05) + 2. + 4. * sqrt(x_i) + 8 + 2 + sqrt(x_i_plus_05));
 		}
-		if (x_i_minus_05 <= breaking_point && breaking_point <= x_i_plus_05) { // точка разрыва принадлежит отрезку
-			double first = (1 / h) * (breaking_point - x_i_minus_05); // просто по-отдельности считаю слагаемые
+		if (x_i_minus_05 <= breaking_point && breaking_point <= x_i_plus_05) { // ГІГ®Г·ГЄГ  Г°Г Г§Г°Г»ГўГ  ГЇГ°ГЁГ­Г Г¤Г«ГҐГ¦ГЁГІ Г®ГІГ°ГҐГ§ГЄГі
+			double first = (1 / h) * (breaking_point - x_i_minus_05); // ГЇГ°Г®Г±ГІГ® ГЇГ®-Г®ГІГ¤ГҐГ«ГјГ­Г®Г±ГІГЁ Г±Г·ГЁГІГ Гѕ Г±Г«Г ГЈГ ГҐГ¬Г»ГҐ
 			double second = (1 / h) * ((x_i_plus_05 - breaking_point) / 6.) * ((4 * sqrt((breaking_point + x_i_plus_05) / 2)) + sqrt(x_i_plus_05) + 2 + 8 + 2 + sqrt(breaking_point));
 			return first + second;
 		}
@@ -116,25 +118,25 @@ double C_i(int i, double h, double breaking_point, int is_test_task) {
 }
 
 vector<double> sweepMethod(int n, double mu1, double mu2, double breaking_point, int is_test_task) {
-	vector<double> result(n + 1); // вектор для записи результата
-	result[0] = mu1; // левое граничное условие
-	result[n] = mu2; //правое граничное условие
-	vector<double> alpha(n), beta(n); //векторы для хранения коэффициентов альфа и бета
+	vector<double> result(n + 1); // ГўГҐГЄГІГ®Г° Г¤Г«Гї Г§Г ГЇГЁГ±ГЁ Г°ГҐГ§ГіГ«ГјГІГ ГІГ 
+	result[0] = mu1; // Г«ГҐГўГ®ГҐ ГЈГ°Г Г­ГЁГ·Г­Г®ГҐ ГіГ±Г«Г®ГўГЁГҐ
+	result[n] = mu2; //ГЇГ°Г ГўГ®ГҐ ГЈГ°Г Г­ГЁГ·Г­Г®ГҐ ГіГ±Г«Г®ГўГЁГҐ
+	vector<double> alpha(n), beta(n); //ГўГҐГЄГІГ®Г°Г» Г¤Г«Гї ГµГ°Г Г­ГҐГ­ГЁГї ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Г Г«ГјГґГ  ГЁ ГЎГҐГІГ 
 	alpha[0] = 0;
 	beta[0] = 0;
 	double h = 1. / n;
 
-	//прямой ход прогонки
-	for (int i = 1; i < n; i++) {//у альфа и бета индексы сдвинуты на 1
-		double Ai = A_i(i, h, breaking_point, is_test_task); // коэффициент Ai из метода прогонки
-		double Bi = B_i(i, h, breaking_point, is_test_task); // коэффициент Вi из метода прогонки
-		double Ci = C_i(i, h, breaking_point, is_test_task); // коэффициент Сi из метода прогонки
-		double fii = fi_i(h, breaking_point, (i - 0.5) * h, (i + 0.5) * h, i * h, is_test_task); // коэффициент fi_i из разностной схемы
+	//ГЇГ°ГїГ¬Г®Г© ГµГ®Г¤ ГЇГ°Г®ГЈГ®Г­ГЄГЁ
+	for (int i = 1; i < n; i++) {//Гі Г Г«ГјГґГ  ГЁ ГЎГҐГІГ  ГЁГ­Г¤ГҐГЄГ±Г» Г±Г¤ГўГЁГ­ГіГІГ» Г­Г  1
+		double Ai = A_i(i, h, breaking_point, is_test_task); // ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІ Ai ГЁГ§ Г¬ГҐГІГ®Г¤Г  ГЇГ°Г®ГЈГ®Г­ГЄГЁ
+		double Bi = B_i(i, h, breaking_point, is_test_task); // ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІ Г‚i ГЁГ§ Г¬ГҐГІГ®Г¤Г  ГЇГ°Г®ГЈГ®Г­ГЄГЁ
+		double Ci = C_i(i, h, breaking_point, is_test_task); // ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІ Г‘i ГЁГ§ Г¬ГҐГІГ®Г¤Г  ГЇГ°Г®ГЈГ®Г­ГЄГЁ
+		double fii = fi_i(h, breaking_point, (i - 0.5) * h, (i + 0.5) * h, i * h, is_test_task); // ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІ fi_i ГЁГ§ Г°Г Г§Г­Г®Г±ГІГ­Г®Г© Г±ГµГҐГ¬Г»
 		alpha[i] = Bi / (Ci - Ai * alpha[i - 1]);
 		beta[i] = (fii + Ai * beta[i - 1]) / (Ci - Ai * alpha[i - 1]);
 	}
 
-	//обратный ход прогонки
+	//Г®ГЎГ°Г ГІГ­Г»Г© ГµГ®Г¤ ГЇГ°Г®ГЈГ®Г­ГЄГЁ
 	for (int i = n - 1; i > 0; i--) {
 		result[i] = alpha[i] * result[i + 1] + beta[i];
 	}
@@ -142,15 +144,15 @@ vector<double> sweepMethod(int n, double mu1, double mu2, double breaking_point,
 }
 
 vector<vector<double>> differenceScheme(int n, double mu1, double mu2, double breaking_point, int is_test_task, double* maxDifference, double* maxDiffX) {
-	vector<vector<double>> result; //итоговая "таблица"
+	vector<vector<double>> result; //ГЁГІГ®ГЈГ®ГўГ Гї "ГІГ ГЎГ«ГЁГ¶Г "
 	double h = 1. / n;
 	*maxDifference = 0;
 
-	vector<double> v_with_usual_h = sweepMethod(n, mu1, mu2, breaking_point, is_test_task); //решение разностной схемы с обычным шагом
+	vector<double> v_with_usual_h = sweepMethod(n, mu1, mu2, breaking_point, is_test_task); //Г°ГҐГёГҐГ­ГЁГҐ Г°Г Г§Г­Г®Г±ГІГ­Г®Г© Г±ГµГҐГ¬Г» Г± Г®ГЎГ»Г·Г­Г»Г¬ ГёГ ГЈГ®Г¬
 	if (!is_test_task) {
 		vector<double> v_with_half_h = sweepMethod(n * 2, mu1, mu2, breaking_point, is_test_task);
-		//решение разностной схемы с половинным шагом
-		vector<double>v_minus_v_half_h(n + 1); // модуль разности решений разностной схемы с обычным шагом и с половинным шагом
+		//Г°ГҐГёГҐГ­ГЁГҐ Г°Г Г§Г­Г®Г±ГІГ­Г®Г© Г±ГµГҐГ¬Г» Г± ГЇГ®Г«Г®ГўГЁГ­Г­Г»Г¬ ГёГ ГЈГ®Г¬
+		vector<double>v_minus_v_half_h(n + 1); // Г¬Г®Г¤ГіГ«Гј Г°Г Г§Г­Г®Г±ГІГЁ Г°ГҐГёГҐГ­ГЁГ© Г°Г Г§Г­Г®Г±ГІГ­Г®Г© Г±ГµГҐГ¬Г» Г± Г®ГЎГ»Г·Г­Г»Г¬ ГёГ ГЈГ®Г¬ ГЁ Г± ГЇГ®Г«Г®ГўГЁГ­Г­Г»Г¬ ГёГ ГЈГ®Г¬
 		for (int i = 0; i < n + 1; i++) {
 			v_minus_v_half_h[i] = abs(v_with_usual_h[i] - v_with_half_h[2 * i]);
 			if (v_minus_v_half_h[i] > *maxDifference) {
@@ -161,8 +163,8 @@ vector<vector<double>> differenceScheme(int n, double mu1, double mu2, double br
 		}
 	}
 	else {
-		vector<double>u_x(n + 1); //аналитическое решение
-		vector<double>u_x_minus_v(n + 1); // модуль разности аналитического решения и решения с обычным шагом
+		vector<double>u_x(n + 1); //Г Г­Г Г«ГЁГІГЁГ·ГҐГ±ГЄГ®ГҐ Г°ГҐГёГҐГ­ГЁГҐ
+		vector<double>u_x_minus_v(n + 1); // Г¬Г®Г¤ГіГ«Гј Г°Г Г§Г­Г®Г±ГІГЁ Г Г­Г Г«ГЁГІГЁГ·ГҐГ±ГЄГ®ГЈГ® Г°ГҐГёГҐГ­ГЁГї ГЁ Г°ГҐГёГҐГ­ГЁГї Г± Г®ГЎГ»Г·Г­Г»Г¬ ГёГ ГЈГ®Г¬
 		for (int i = 0; i < n + 1; i++) {
 			double xi = i * h;
 			u_x[i] = u_for_test(xi);
